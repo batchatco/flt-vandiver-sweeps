@@ -1,0 +1,11 @@
+# 4795 pairs (3789 primes), nl=100, workers=10
+# 500/4795 pairs, 30 fails, 5s
+# 1000/4795 pairs, 42 fails, 19s
+# 1500/4795 pairs, 43 fails, 47s
+# 2000/4795 pairs, 43 fails, 1m29s
+# 2501/4795 pairs, 45 fails, 2m24s
+# 3000/4795 pairs, 48 fails, 3m35s
+# 3500/4795 pairs, 48 fails, 5m2s
+# 4000/4795 pairs, 49 fails, 6m47s
+# 4500/4795 pairs, 51 fails, 8m50s
+# DONE pairs=4795 cells=479500 fails=51 tviol=0 elapsed=10m10s
