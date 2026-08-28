@@ -52,6 +52,14 @@ go run main.go                                   # see file header for flags
 
 `vdsweep/stats.py` reproduces the census chi-squared statistics from the CSV.
 
+## Note on local paths
+
+Paths of the form `~/vandiver/...` in code comments and in `vdsweep/README.md`
+refer to the author's local validation artifacts (the Python reference
+implementation `witness_census.py`, and the Hart--Harvey--Ong irregular-pair
+data used to seed the census). They are not part of this repository; the
+validation they provided is described under "Validation" above.
+
 ## Provenance
 
 (c) Bradley Taylor. Code written largely by Claude (Anthropic) under the
