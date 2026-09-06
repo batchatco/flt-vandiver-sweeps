@@ -1,0 +1,30 @@
+'Research20260906Bad.lemma_9_7_zmod_bad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Research20260906Bad.lemma_9_7_dvd_z_bad' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Research20260906Bad.fermatLastTheoremFor_of_bad_cert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Research20260906Bad.fermatLastTheorem_of_bad_supply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Research20260906Bad.qi37_1777' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ qi37_1777._native.native_decide.ax_1_1]
+'Research20260906Bad.nobad37_1777' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ nobad37_1777._native.native_decide.ax_1_1]
+'Research20260906Bad.sg37_149' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ sg37_149._native.native_decide.ax_1_1]
+'Research20260906Bad.example_1777' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ nobad37_1777._native.native_decide.ax_1_1,
+ qi37_1777._native.native_decide.ax_1_1,
+ sg37_149._native.native_decide.ax_1_1]
+'Research20260906Bad.noBad_of_two_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Research20260906Bad.noBad_of_size' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Research20260906Bad.fermatLastTheoremFor_of_size_cert' depends on axioms: [propext, Classical.choice, Quot.sound]
+'Research20260906Bad.example_1777_size' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound,
+ qi37_1777._native.native_decide.ax_1_1,
+ sg37_149._native.native_decide.ax_1_1]
