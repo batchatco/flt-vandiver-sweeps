@@ -19,6 +19,7 @@ reported numbers can be checked rather than trusted.
 | Census: 4,795 irregular pairs `(p, i)`, `p < 10^5`, x first 100 candidate `l` = 479,500 cells; 51 witness failures vs 50.0 predicted by the `1/p` model; dlog landing index uniform; no `t`-dependence | `vdsweep/main.go` | `vdsweep/vdsweep-100k.csv` |
 | Case II descent runs for `2ℓ ≤ 3p² − 5p + 2`, extending the artifact's `ℓ < p² − p` (Section 8, hypothesis (1)'s "three numbers") | `bad-certificate/BadCertificate.lean` (Lean, checked against flt-vandiver `afm-v1`, standard axioms) | `bad-certificate/check.log` |
 | Full witness (the artifact's `vandiverCert p l t (evenIndices p)`, all even indices) exists for **every** prime `5 <= p < 10^5`; max 11 candidate `l`; first candidate succeeds 60.8% (model: `e^{-1/2} ~ 0.607`); least witness `<= 2.08 p log^2 p` | `vdsweep/fullsweep.go` | `vdsweep/vdsweep-fullwitness-100k.csv` |
+| Witness *counts* per prime, `5 <= p < 6000`, in the old budget `l < p^2 - p` and in the proved bad-cert window `2l <= 3p^2 - 5p + 2`: at least one everywhere, exactly one only at `p = 5`, pass rate 0.607 per candidate in every band; Germain (A)+(B) independent of the `Q_i` test (45% either way), joint witness inside the old budget for every `p < 3000` | `witcount/main.go` | `witcount/witcount_6000.csv`, `witcount/witcount_sg_3000.csv` |
 
 ## Validation
 
@@ -37,6 +38,9 @@ reported numbers can be checked rather than trusted.
   (`p` = 5, 7, 11, 13, 37, 59, 163).
 * `sgsweep/main.go` checks Germain's conditions (A) and (B) on the subgroup
   of `p`-th power residues, the same check as the artifact's `sgCertSub`.
+* `witcount/main.go` reuses the `fullsweep.go` discrete-log check and
+  cross-checks its first witness against `vdsweep-fullwitness-100k.csv` for
+  every prime in range (0 mismatches for `p < 6000`).
 
 ## Running
 
@@ -49,6 +53,8 @@ go run fullsweep.go sweep 100000 10 out.csv     # ~50 min on 10 cores
 go run main.go                                   # census; ~10 min on 12 cores
 cd ../sgsweep
 go run main.go                                   # see file header for flags
+cd ../witcount
+go run . 6000 8 out.csv ../vdsweep/vdsweep-fullwitness-100k.csv   # ~4 min on 8 cores
 ```
 
 `vdsweep/stats.py` reproduces the census chi-squared statistics from the CSV.
