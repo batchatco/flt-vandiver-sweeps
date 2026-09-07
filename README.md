@@ -1,9 +1,8 @@
 # flt-vandiver-sweeps
 
 Search and census tools behind the *evidence* paragraphs of the paper
-"Lean 4 Formalization of Fermat's Last Theorem for Every Prime Exponent
-Below 1000, Regular and Irregular, and Two Wolstenholme Primes"
-(Section 8, "The remaining gap").
+"The Cyclotomic Route to Fermat's Last Theorem, Formalized Past the
+Regular Case" (Section 10, "The remaining gap").
 
 Nothing here is load-bearing for any theorem: every proof-relevant claim of
 the paper is machine-checked by the Lean kernel in the six `flt-*` artifact
@@ -13,11 +12,11 @@ reported numbers can be checked rather than trusted.
 
 ## Claim-to-artifact map
 
-| Paper claim (Section 8) | Tool | Result file |
+| Paper claim (Section 10) | Tool | Result file |
 |---|---|---|
 | Sophie Germain auxiliary `q` found for every odd prime `p < 2^32`, no failures | `sgsweep/` | `sgsweep-2e32.csv.gz` (1.5 GB — not in this repo; SHA-256 in `sgsweep/sgsweep-2e32.csv.gz.sha256`, file available from the author / archival deposit) |
 | Census: 4,795 irregular pairs `(p, i)`, `p < 10^5`, x first 100 candidate `l` = 479,500 cells; 51 witness failures vs 50.0 predicted by the `1/p` model; dlog landing index uniform; no `t`-dependence | `vdsweep/main.go` | `vdsweep/vdsweep-100k.csv` |
-| Case II descent runs for `2ℓ ≤ 3p² − 5p + 2`, extending the artifact's `ℓ < p² − p` (Section 8, hypothesis (1)'s "three numbers") | `bad-certificate/BadCertificate.lean` (Lean, checked against flt-vandiver `afm-v1`, standard axioms) | `bad-certificate/check.log` |
+| Case II descent runs for `2ℓ ≤ 3p² − 5p + 2`, extending the artifact's `ℓ < p² − p` (Section 10, hypothesis (1)(c)) | `bad-certificate/BadCertificate.lean` (Lean, checked against flt-vandiver `afm-v1`, standard axioms) | `bad-certificate/check.log` |
 | Full witness (the artifact's `vandiverCert p l t (evenIndices p)`, all even indices) exists for **every** prime `5 <= p < 10^5`; max 11 candidate `l`; first candidate succeeds 60.8% (model: `e^{-1/2} ~ 0.607`); least witness `<= 2.08 p log^2 p` | `vdsweep/fullsweep.go` | `vdsweep/vdsweep-fullwitness-100k.csv` |
 | Witness *counts* per prime, `5 <= p < 6000`, in the old budget `l < p^2 - p` and in the proved bad-cert window `2l <= 3p^2 - 5p + 2`: at least one everywhere, exactly one only at `p = 5`, pass rate 0.607 per candidate in every band; Germain (A)+(B) independent of the `Q_i` test (45% either way), joint witness inside the old budget for every `p < 3000` | `witcount/main.go` | `witcount/witcount_6000.csv`, `witcount/witcount_sg_3000.csv` |
 
