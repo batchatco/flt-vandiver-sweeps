@@ -6,9 +6,12 @@ it by the emptiness of a finite-field "Bad set", and proves that emptiness for
 `2ℓ ≤ 3p² − 5p + 2`, i.e. `k = (ℓ−1)/p ≤ (3p−5)/2`, against the artifact's
 `k < p − 1`.
 
-This is v2 material. It is **not** part of the pinned artifact and no pinned
-repository is modified: the file imports flt-vandiver read-only and is checked
-in that library's environment.
+**Status.** This file was written as a read-only check against the `afm-v1`
+artifact. From release `afm-v2` the same development is part of flt-vandiver
+itself (`FltVandiver/BadCertificate.lean`, with the joint-auxiliary interface in
+`FltVandiver/JointAuxiliary.lean`), and the paper cites that copy. The copy here
+is kept as the record of the original check; `check.log` below is its output
+against `afm-v1`.
 
 ## Statement
 
